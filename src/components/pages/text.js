@@ -23,14 +23,6 @@ const Text = () => {
     setNewNote({ content: '' });
     navigate("/all");
   };
-
-  // Function to handle deleting a note
-  const handleDelete = (id) => {
-    const updatedNotes = notes.filter((note) => note.id !== id);
-    setNotes(updatedNotes);
-    localStorage.setItem('notepad_text', JSON.stringify(updatedNotes));
-  };
-
   // Function to handle changes in the input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,15 +42,6 @@ const Text = () => {
       />
       <br />
       <button onClick={handleSave}>Save Note</button>
-      <br />
-      <br />
-      {notes.map((note) => (
-        <div key={note.id}>
-          <h3>{note.title}</h3>
-          <p>{note.content}</p>
-          <button onClick={() => handleDelete(note.id)}>Delete</button>
-        </div>
-      ))}
     </div>
   );
 };

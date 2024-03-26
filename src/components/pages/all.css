@@ -1,0 +1,20 @@
+/* NoteList.css */
+.note-list-container {
+    display: flex;
+  }
+  
+  .text-notes,
+  .photo-notes {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .note {
+    margin-bottom: 20px;
+  }
+  
+  .photo-notes img {
+    max-width: 100%;
+    height: auto;
+  }
+  

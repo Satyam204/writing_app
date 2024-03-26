@@ -24,13 +24,6 @@ const Photo = () => {
     navigate("/all");
   };
 
-  // Function to handle deleting a note
-  const handleDelete = (id) => {
-    const updatedNotes = notes.filter((note) => note.id !== id);
-    setNotes(updatedNotes);
-    localStorage.setItem('notepad_photos', JSON.stringify(updatedNotes));
-  };
-
   // Function to handle changes in the input fields
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -60,13 +53,6 @@ const Photo = () => {
       <br />
       <button onClick={handleSave}>Save Note</button>
       <br />
-      <br />
-      {notes.map((note) => (
-        <div key={note.id}>
-          <img src={note.image} alt="Note" style={{ maxWidth: '300px', maxHeight: '300px' }} />
-          <button onClick={() => handleDelete(note.id)}>Delete</button>
-        </div>
-      ))}
     </div>
   );
 };
